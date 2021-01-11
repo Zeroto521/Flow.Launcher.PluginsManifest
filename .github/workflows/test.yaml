@@ -9,15 +9,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
-      matrix:
-        python-version: [3.7, 3.8]
+      python-version: 3.8
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python ${{ python-version }}
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ python-version }}
 
       - name: Install dependencies
         run: |
